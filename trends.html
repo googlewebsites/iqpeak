@@ -1,134 +1,460 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 Global Drama Trends | The iQPeak Intelligence Report</title>
-    
-    <meta name="description" content="Deep dive into the 2026 Asian drama landscape. Understanding Tropes, Emotional Moods, and Life Lessons from top iQIYI series.">
-    <meta name="keywords" content="Xianxia vs Wuxia 2026, Drama Tropes Explained, Emotional Drama Guide, Life Lessons from Asian Series, iQPeak Trends">
+    <title>2026 Global Drama Trends | Intelligence Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "The Evolution of Asian Storytelling in 2026",
-      "description": "A comprehensive analysis of tropes, mood-based recommendations, and pedagogical value in modern dramas.",
-      "author": { "@type": "Person", "name": "Mateus Silva dos Santos" },
-      "publisher": { "@type": "Organization", "name": "iQPeak" },
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://iqpeak.xyz/trends.html" }
-    }
-    </script>
-
     <style>
         :root { --accent: #00ff88; --bg: #050505; --surface: #0f0f0f; --text: #ffffff; --text-dim: #888; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 0; margin: 0; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
         nav { padding: 30px 0; border-bottom: 1px solid #1a1a1a; display: flex; justify-content: space-between; }
         .logo { font-weight: 800; font-size: 1.5rem; color: white; text-decoration: none; }
         .logo span { color: var(--accent); }
-
-        /* HERO SECTION */
-        .hero { padding: 100px 0 60px; text-align: left; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: -4px; line-height: 1; margin-bottom: 20px; }
-        .hero p { font-size: 1.4rem; color: var(--accent); font-weight: 600; opacity: 0.8; }
-
-        /* SEMANTIC BLOCKS */
-        .trend-section { padding: 80px 0; border-top: 1px solid #111; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
-        
-        h2 { font-size: 2.2rem; letter-spacing: -1px; margin-bottom: 30px; color: #fff; }
-        h3 { color: var(--accent); font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; }
-        p { color: var(--text-dim); margin-bottom: 20px; font-size: 1.1rem; }
-
-        /* FEATURED CARDS */
-        .mood-box { background: var(--surface); padding: 40px; border-radius: 24px; border: 1px solid #1a1a1a; transition: 0.3s; }
+        .hero { padding: 80px 0 40px; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -3px; line-height: 1; margin-bottom: 20px; }
+        .trends-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 25px; 
+            padding-bottom: 100px; 
+        }
+        .mood-box { 
+            background: var(--surface); 
+            padding: 30px; 
+            border-radius: 20px; 
+            border: 1px solid #1a1a1a; 
+            transition: 0.3s ease; 
+        }
         .mood-box:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .badge { background: #1a1a1a; color: var(--accent); padding: 5px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; margin-bottom: 15px; display: inline-block; }
-
-        /* INNOVATIVE FAQ ACCORDION STYLE */
-        .faq-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #111; }
-        .faq-item b { display: block; font-size: 1.2rem; margin-bottom: 10px; color: white; }
-
-        footer { padding: 100px 0 50px; text-align: center; font-size: 0.8rem; color: #333; }
-        
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; gap: 40px; } .hero h1 { font-size: 3rem; } }
+        .badge { background: #1a1a1a; color: var(--accent); padding: 4px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; margin-bottom: 15px; display: inline-block; }
+        h4 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
+        p { color: var(--text-dim); font-size: 0.95rem; }
+        footer { padding: 60px 0; text-align: center; border-top: 1px solid #111; color: #333; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-
 <div class="container">
     <nav>
-        <a href="/" class="logo">iQ<span>PEAK</span></a>
-        <div style="font-size: 0.7rem; font-weight: bold; color: var(--accent);">2026 INTELLIGENCE</div>
+        <a href="index.html" class="logo">iQ<span>PEAK</span></a>
+        <div style="font-size: 0.7rem; font-weight: bold; color: var(--accent);">TRENDS REPORT 2026</div>
     </nav>
 
     <header class="hero">
-        <h1>Drama Intelligence Report.</h1>
-        <p>Beyond Entertainment: Decoding the Cultural DNA of Asian Storytelling.</p>
+        <h1>Global Intelligence Matrix.</h1>
+        <p style="color: var(--accent)">Auto-generated analysis of the latest Asian storytelling shifts.</p>
     </header>
 
-    <section class="trend-section">
-        <h3>01. Semantic Lexicon</h3>
-        <h2>Decoding 2026 Tropes</h2>
-        <div class="grid">
-            <div class="text-block">
-                <p>The transition from <b>Wuxia</b> (Martial Heroism) to <b>Xianxia</b> (High Magic/Immortal) has redefined how global audiences perceive Asian fantasy. In 2026, we see the rise of "Post-Modern Xianxia," where ancient immortality meets modern psychological dilemmas.</p>
-                <p>Understanding these tropes is essential for any fan. For instance, the <b>"Contract Marriage"</b> trope has evolved from a simple plot device into a deep commentary on modern commitment and social structures.</p>
-            </div>
-            <div class="text-block">
-                <div class="mood-box">
-                    <span class="badge">KEY TREND</span>
-                    <h4>Xianxia vs. Wuxia</h4>
-                    <p>Wuxia is grounded in human effort and code of honor. Xianxia expands this into the cosmic realm of gods and demons. iQPeak tracks how these stories influence modern philosophy.</p>
-                </div>
+    <main class="trends-grid">
+        
+        <div class="mood-box">
+            <span class="badge">XIANXIA MAGIC</span>
+            <h4>The Curious Evolution of Xianxia Magic</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Xianxia Magic trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Curious, Emotional Intelligence | #XianxiaMagic2026
             </div>
         </div>
-    </section>
-
-    <section class="trend-section">
-        <h3>02. The Emotional Compass</h3>
-        <h2>Curated by Your Current State</h2>
-        <div class="grid">
-            <div class="mood-box">
-                <h4>Feeling "Resilient"?</h4>
-                <p>Look for dramas featuring <b>Rebirth & Growth</b>. These stories resonate with the human spirit's need to overcome insurmountable odds.</p>
-            </div>
-            <div class="mood-box">
-                <h4>Feeling "Analytical"?</h4>
-                <p>Dive into our <b>Tech-Espionage</b> cluster. Explore series that challenge your perception of information sovereignty and digital ethics.</p>
+        <div class="mood-box">
+            <span class="badge">XIANXIA MAGIC</span>
+            <h4>The Resilient Evolution of Xianxia Magic</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Xianxia Magic trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Resilient, Personal Growth | #XianxiaMagic2026
             </div>
         </div>
-    </section>
-
-    <section class="trend-section">
-        <h3>03. Beyond the Screen</h3>
-        <h2>Pedagogical Lessons in Scripts</h2>
-        <div class="grid">
-            <div class="text-block">
-                <p>Every dialogue we curate at <b>iQPeak</b> is selected for its educational and philosophical value. Dramas are the modern classrooms where empathy, leadership, and emotional intelligence are taught through visual storytelling.</p>
-            </div>
-            <div class="text-block">
-                <div class="faq-item">
-                    <b>What can we learn from Silent Mentorship?</b>
-                    <p>Modern scripts often use silence to emphasize that teaching isn't just about noise; it's about space and observation.</p>
-                </div>
-                <div class="faq-item">
-                    <b>The Ethics of Digital Sovereignty in Media?</b>
-                    <p>Through "Tactical" dramas, we explore how information control affects personal freedom in 2026.</p>
-                </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Ambitious Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Ambitious, Personal Growth | #HiddenBillionaire2026
             </div>
         </div>
-    </section>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Healing Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Cultural Awareness. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Healing, Cultural Awareness | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Resilient Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Strategic Thinking. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Resilient, Strategic Thinking | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">FOUND FAMILY</span>
+            <h4>The Analytical Evolution of Found Family</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Found Family trope to teach Ethical Choices. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Analytical, Ethical Choices | #FoundFamily2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Empowered Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Digital Sovereignty. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Digital Sovereignty | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Melancholic Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Resilience. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Melancholic, Resilience | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">SLOW BURN ROMANCE</span>
+            <h4>The Melancholic Evolution of Slow Burn Romance</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Slow Burn Romance trope to teach Resilience. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Melancholic, Resilience | #SlowBurnRomance2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Dreamy Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Dreamy, Emotional Intelligence | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Brave Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Leadership. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Brave, Leadership | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">CONTRACT MARRIAGE</span>
+            <h4>The Dreamy Evolution of Contract Marriage</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Contract Marriage trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Dreamy, Emotional Intelligence | #ContractMarriage2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">SLOW BURN ROMANCE</span>
+            <h4>The Analytical Evolution of Slow Burn Romance</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Slow Burn Romance trope to teach Ethical Choices. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Analytical, Ethical Choices | #SlowBurnRomance2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">WUXIA HONOR</span>
+            <h4>The Brave Evolution of Wuxia Honor</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Wuxia Honor trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Brave, Emotional Intelligence | #WuxiaHonor2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">WUXIA HONOR</span>
+            <h4>The Healing Evolution of Wuxia Honor</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Wuxia Honor trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Healing, Personal Growth | #WuxiaHonor2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">SLOW BURN ROMANCE</span>
+            <h4>The Ambitious Evolution of Slow Burn Romance</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Slow Burn Romance trope to teach Ethical Choices. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Ambitious, Ethical Choices | #SlowBurnRomance2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">SLOW BURN ROMANCE</span>
+            <h4>The Melancholic Evolution of Slow Burn Romance</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Slow Burn Romance trope to teach Resilience. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Melancholic, Resilience | #SlowBurnRomance2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">SLOW BURN ROMANCE</span>
+            <h4>The Brave Evolution of Slow Burn Romance</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Slow Burn Romance trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Brave, Emotional Intelligence | #SlowBurnRomance2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Curious Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Curious, Personal Growth | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">TIME TRAVEL</span>
+            <h4>The Nostalgic Evolution of Time Travel</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Time Travel trope to teach Future Learning. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Nostalgic, Future Learning | #TimeTravel2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">SLOW BURN ROMANCE</span>
+            <h4>The Brave Evolution of Slow Burn Romance</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Slow Burn Romance trope to teach Leadership. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Brave, Leadership | #SlowBurnRomance2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Melancholic Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Melancholic, Personal Growth | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">REINCARNATION</span>
+            <h4>The Dreamy Evolution of Reincarnation</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Reincarnation trope to teach Future Learning. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Dreamy, Future Learning | #Reincarnation2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">CYBER ESPIONAGE</span>
+            <h4>The Brave Evolution of Cyber Espionage</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Cyber Espionage trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Brave, Personal Growth | #CyberEspionage2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Nostalgic Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Nostalgic, Personal Growth | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">FOUND FAMILY</span>
+            <h4>The Nostalgic Evolution of Found Family</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Found Family trope to teach Social Dynamics. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Nostalgic, Social Dynamics | #FoundFamily2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Dreamy Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Digital Sovereignty. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Dreamy, Digital Sovereignty | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Empowered Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Social Dynamics. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Social Dynamics | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Brave Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Leadership. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Brave, Leadership | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Healing Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Ethical Choices. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Healing, Ethical Choices | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">XIANXIA MAGIC</span>
+            <h4>The Healing Evolution of Xianxia Magic</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Xianxia Magic trope to teach Strategic Thinking. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Healing, Strategic Thinking | #XianxiaMagic2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Resilient Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Ethical Choices. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Resilient, Ethical Choices | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">WUXIA HONOR</span>
+            <h4>The Resilient Evolution of Wuxia Honor</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Wuxia Honor trope to teach Strategic Thinking. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Resilient, Strategic Thinking | #WuxiaHonor2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">CONTRACT MARRIAGE</span>
+            <h4>The Ambitious Evolution of Contract Marriage</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Contract Marriage trope to teach Strategic Thinking. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Ambitious, Strategic Thinking | #ContractMarriage2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">CONTRACT MARRIAGE</span>
+            <h4>The Analytical Evolution of Contract Marriage</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Contract Marriage trope to teach Ethical Choices. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Analytical, Ethical Choices | #ContractMarriage2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">REINCARNATION</span>
+            <h4>The Ambitious Evolution of Reincarnation</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Reincarnation trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Ambitious, Emotional Intelligence | #Reincarnation2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">CONTRACT MARRIAGE</span>
+            <h4>The Analytical Evolution of Contract Marriage</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Contract Marriage trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Analytical, Personal Growth | #ContractMarriage2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">CONTRACT MARRIAGE</span>
+            <h4>The Empowered Evolution of Contract Marriage</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Contract Marriage trope to teach Digital Sovereignty. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Digital Sovereignty | #ContractMarriage2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Resilient Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Leadership. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Resilient, Leadership | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">CONTRACT MARRIAGE</span>
+            <h4>The Ambitious Evolution of Contract Marriage</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Contract Marriage trope to teach Ethical Choices. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Ambitious, Ethical Choices | #ContractMarriage2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">XIANXIA MAGIC</span>
+            <h4>The Dreamy Evolution of Xianxia Magic</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Xianxia Magic trope to teach Strategic Thinking. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Dreamy, Strategic Thinking | #XianxiaMagic2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">HIDDEN BILLIONAIRE</span>
+            <h4>The Empowered Evolution of Hidden Billionaire</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Hidden Billionaire trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Emotional Intelligence | #HiddenBillionaire2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">TIME TRAVEL</span>
+            <h4>The Empowered Evolution of Time Travel</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Time Travel trope to teach Cultural Awareness. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Cultural Awareness | #TimeTravel2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">XIANXIA MAGIC</span>
+            <h4>The Resilient Evolution of Xianxia Magic</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Xianxia Magic trope to teach Cultural Awareness. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Resilient, Cultural Awareness | #XianxiaMagic2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">TIME TRAVEL</span>
+            <h4>The Empowered Evolution of Time Travel</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Time Travel trope to teach Emotional Intelligence. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Emotional Intelligence | #TimeTravel2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">SLOW BURN ROMANCE</span>
+            <h4>The Healing Evolution of Slow Burn Romance</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Slow Burn Romance trope to teach Resilience. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Healing, Resilience | #SlowBurnRomance2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">XIANXIA MAGIC</span>
+            <h4>The Nostalgic Evolution of Xianxia Magic</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Xianxia Magic trope to teach Personal Growth. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Nostalgic, Personal Growth | #XianxiaMagic2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">ENEMIES TO LOVERS</span>
+            <h4>The Empowered Evolution of Enemies to Lovers</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Enemies to Lovers trope to teach Social Dynamics. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Social Dynamics | #EnemiestoLovers2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">WUXIA HONOR</span>
+            <h4>The Brave Evolution of Wuxia Honor</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Wuxia Honor trope to teach Strategic Thinking. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Brave, Strategic Thinking | #WuxiaHonor2026
+            </div>
+        </div>
+        <div class="mood-box">
+            <span class="badge">XIANXIA MAGIC</span>
+            <h4>The Empowered Evolution of Xianxia Magic</h4>
+            <p>Exploring how modern storytelling in 2026 uses the Xianxia Magic trope to teach Strategic Thinking. This trend reflects a deep shift in global audience dynamics.</p>
+            <div style="font-size: 0.8rem; color: var(--accent); margin-top: 10px;">
+                Vibe: Empowered, Strategic Thinking | #XianxiaMagic2026
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 iQPeak.xyz | The Ultimate Hub for Global Asian Drama Intel</p>
-        <p><a href="/" style="color:var(--accent); text-decoration:none;">Back to Home</a></p>
+        <p>&copy; 2026 iQPeak.xyz | Developed by Mateus Silva dos Santos</p>
+        <p><a href="index.html" style="color: var(--accent); text-decoration: none;">Back to Home</a></p>
     </footer>
 </div>
-
 </body>
 </html>
