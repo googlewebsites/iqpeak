@@ -535,16 +535,40 @@
     </nav>
 </footer>
     </div>
+<!-- Contador de Visitas -->
 <div>
-👁️ Visitas: <span id="visits">0</span>
+    👁️ Visitas: <span id="visits">0</span>
 </div>
 
 <script>
-fetch("https://api.countapi.xyz/hit/iqpeak/visits")
-  .then(res => res.json())
-  .then(res => {
-    document.getElementById("visits").innerText = res.value;
-  });
+(function() {
+    // Lista de APIs em ordem
+    const apis = [
+        'https://api.countapi.xyz/hit/iqpeak/visits',
+        'https://api.countapi.xyz/hit/meusite/visits',
+        'https://api.visitorbadge.io/api/visitors?path=iqpeak'
+    ];
+    
+    function updateCount(value) {
+        document.getElementById('visits').innerText = value;
+        localStorage.setItem('lastVisit', value);
+    }
+    
+    // Tentar APIs
+    fetch(apis[0])
+        .then(r => r.json())
+        .then(r => updateCount(r.value))
+        .catch(() => {
+            fetch(apis[1])
+                .then(r => r.json())
+                .then(r => updateCount(r.value))
+                .catch(() => {
+                    // Fallback: localStorage
+                    let last = localStorage.getItem('lastVisit');
+                    updateCount(last ? parseInt(last) + 1 : 1);
+                });
+        });
+})();
 </script>
 </body>
 </html>
