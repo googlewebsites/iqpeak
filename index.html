@@ -535,5 +535,17 @@
     </nav>
 </footer>
     </div>
+
+    <div style="font-size:22px;text-align:center;margin-top:30px;">
+👁️ Visitas: <span id="visits">...</span>
+</div>
+
+<script>
+fetch("https://api.countapi.xyz/hit/iqpeak.xyz/visits")
+  .then(res => res.json())
+  .then(res => {
+    document.getElementById("visits").innerText = res.value;
+  });
+</script>
 </body>
 </html>
