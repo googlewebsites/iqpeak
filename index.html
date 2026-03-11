@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iQPeak | Ultimate Global Drama Hub 2026</title>
+    <meta name="description" content="Explore the top 100 trending Asian dramas. Quotes, tropes, and life lessons from iQIYI and beyond.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <script id="seo-schema" type="application/ld+json"></script>
+    
+    <style>
+        :root { 
+            --accent: #00ff88; 
+            --bg: #050505; 
+            --card: #111111;
+            --text: #ffffff; 
+            --text-dim: #888;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAV */
+        nav { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            position: sticky; top: 0; 
+            background: rgba(5,5,5,0.8); 
+            backdrop-filter: blur(20px); 
+            z-index: 1000;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+        .logo span { color: var(--accent); }
+
+        /* CATEGORY BAR (O QUE FALTAVA) */
+        .category-container {
+            padding: 30px 5%;
+            position: sticky; top: 70px;
+            background: var(--bg);
+            z-index: 900;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        .category-container::-webkit-scrollbar { display: none; }
+        
+        .cat-btn {
+            background: #111;
+            border: 1px solid #222;
+            color: var(--text-dim);
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .cat-btn.active, .cat-btn:hover {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        /* GRID LAYOUT */
+        header { padding: 60px 5% 20px; text-align: left; max-width: 1200px; margin: 0 auto; }
+        h1 { font-size: 3.5rem; letter-spacing: -3px; line-height: 1; margin-bottom: 10px; }
+        
+        .drama-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 5% 100px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .card-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .quote {
+            font-family: "Georgia", serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            margin: 20px 0;
+            line-height: 1.4;
+            color: #efefef;
+        }
+
+        .card h2 { font-size: 1.5rem; margin-bottom: 10px; letter-spacing: -0.5px; }
+        .card p { color: var(--text-dim); font-size: 0.9rem; }
+
+        footer { 
+            padding: 60px 5%; 
+            text-align: center; 
+            border-top: 1px solid #111; 
+            color: #444; 
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .drama-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">iQ<span>PEAK</span></div>
+        <div style="font-size:0.7rem; color:var(--accent); font-weight:700">GLOBAL TOP 100</div>
+    </nav>
+
+    <header>
+        <h1>Voices of 2026.</h1>
+        <p style="color:var(--text-dim)">The ultimate collection of drama wisdom and trending tropes.</p>
+    </header>
+
+    <div class="category-container">
+        <button class="cat-btn active" onclick="filterCat('All')">All Trends</button><button class="cat-btn" onclick="filterCat('Fantasy')">Fantasy</button><button class="cat-btn" onclick="filterCat('Historical')">Historical</button><button class="cat-btn" onclick="filterCat('Life')">Life</button><button class="cat-btn" onclick="filterCat('Mystery')">Mystery</button><button class="cat-btn" onclick="filterCat('Romance')">Romance</button><button class="cat-btn" onclick="filterCat('Sci-Fi')">Sci-Fi</button><button class="cat-btn" onclick="filterCat('Tech')">Tech</button>
+    </div>
+
+    <main class="drama-grid" id="main-feed"></main>
+
+    <footer>
+        <p>&copy; 2026 IQPEAK.XYZ | DEVELOPED BY MATEUS SILVA DOS SANTOS</p>
+    </footer>
+
+    <script>
+        const dramas = [{"title": "Love Between Lines", "quote": "Destiny isn't written; it's translated by the heart.", "category": "Romance", "tags": ["Contract Marriage", " iQIYI", " 2026"], "desc": "The global hit exploring digital soulmates."}, {"title": "Tactical Edge", "quote": "Information is the only true sovereignty.", "category": "Tech", "tags": ["Cyber", " Security", " Power"], "desc": "A masterpiece on digital defense and espionage."}, {"title": "The Silent Teacher", "quote": "Silence teaches what noise tries to hide.", "category": "Life", "tags": ["Education", " Mentorship", " Pedagogy"], "desc": "An inspiring look at the future of learning."}, {"title": "Shadow of Han", "quote": "A king silences his sword before his people.", "category": "Historical", "tags": ["Wuxia", " Empire", " Honor"], "desc": "Epic Han Dynasty power struggle."}, {"title": "Neon Pulse", "quote": "In 2026, the only analog thing left is your soul.", "category": "Sci-Fi", "tags": ["Cyberpunk", " Future", " iQIYI"], "desc": "Visual masterpiece set in futuristic Shanghai."}, {"title": "Code: Sovereignty", "quote": "He who controls the code, defines the future.", "category": "Tech", "tags": ["Programming", " Ethics", " Java"], "desc": "Deep dive into digital independence."}, {"title": "Eternal Echoes", "quote": "Voices cross millennia just to say I am here.", "category": "Fantasy", "tags": ["Reincarnation", " Mystery", " Fate"], "desc": "Top-rated mystery series about past lives."}, {"title": "Glitch in Love", "quote": "If life is a simulation, you are my favorite bug.", "category": "Romance", "tags": ["Rom-Com", " Tech", " Virtual"], "desc": "Record-breaking technological love story."}, {"title": "Zenith of Swords", "quote": "Victory is won in the mind before the battlefield.", "category": "Historical", "tags": ["Wuxia", " Action", " Martial Arts"], "desc": "New standard for martial arts choreography."}, {"title": "Urban Legends 2026", "quote": "Fear is just a mirror reflecting what we hide.", "category": "Mystery", "tags": ["Horror", " Anthology", " Thriller"], "desc": "Modern urban myths from across Asia."}, {"title": "Skyline Hearts", "quote": "Flying is a choice; landing safely is an act of love.", "category": "Life", "tags": ["Drama", " Aviation", " Sacrifice"], "desc": "The emotional journey of elite pilots."}, {"title": "Bitter Tea", "quote": "Love needs the perfect temperature to bloom.", "category": "Life", "tags": ["Slice of Life", " Family", " Tea"], "desc": "A slow-burn drama centered on a tea house."}, {"title": "Midnight Seoul", "quote": "The city daydreams while the world sleeps.", "category": "Romance", "tags": ["Melodrama", " Loneliness", " Night"], "desc": "Poetic look at modern connection."}, {"title": "The Last Scroll", "quote": "Knowledge is the treasure no one can steal.", "category": "Mystery", "tags": ["Adventure", " History", " iQIYI"], "desc": "Archaeological mystery across the Silk Road."}, {"title": "Paper Flowers", "quote": "True beauty is carved from effort, not luck.", "category": "Life", "tags": ["Fashion", " Drama", " Success"], "desc": "Behind the scenes of elite fashion."}, {"title": "Hidden Signal", "quote": "I found your signal in a world full of noise.", "category": "Tech", "tags": ["Hacker", " Romance", " Binary"], "desc": "A love story written in code."}, {"title": "Mountain King", "quote": "The peak is only lonely for those who climb alone.", "category": "Life", "tags": ["Business", " Power", " Strategy"], "desc": "Corporate warfare and its heavy price."}, {"title": "Parallel Souls", "quote": "Two worlds, one rhythm, zero distance.", "category": "Sci-Fi", "tags": ["Multiverse", " Science", " Romance"], "desc": "Interdimensional romance with high-concept physics."}, {"title": "Indigo Summer", "quote": "Memories are the only things that never fade.", "category": "Romance", "tags": ["Youth", " Nostalgia", " First Love"], "desc": "A look at first loves and final summers."}, {"title": "Phoenix Reborn", "quote": "To rise, you must first embrace the ashes.", "category": "Historical", "tags": ["Revenge", " Empire", " Strong Female"], "desc": "A woman's journey to reclaim a lost throne."}, {"title": "Queen of Tears", "quote": "Loving you was the most dangerous thing I ever did.", "category": "Romance", "tags": ["Marriage", " Drama", " Netflix"], "desc": "The massive 2024-2025 global hit."}, {"title": "My Demon", "quote": "Contracts with humans are easy; contracts with hearts are not.", "category": "Fantasy", "tags": ["Supernatural", " Contract", " Romance"], "desc": "A demon who loses his powers to a CEO."}, {"title": "Business Proposal", "quote": "I am good at many things, especially protecting you.", "category": "Romance", "tags": ["Office", " Comedy", " Fake Date"], "desc": "The ultimate feel-good office rom-com."}, {"title": "The Glory", "quote": "There will be no glory, only a very long winter.", "category": "Mystery", "tags": ["Revenge", " Dark", " Thriller"], "desc": "A masterpiece of planning and retribution."}, {"title": "Crash Landing on You", "quote": "Even if I lose my way, my heart finds you.", "category": "Romance", "tags": ["Border", " Fate", " Classic"], "desc": "The iconic story of love across borders."}, {"title": "Story of Kunning Palace", "quote": "I didn't want to be queen; I wanted to be free.", "category": "Historical", "tags": ["C-Drama", " iQIYI", " Power"], "desc": "A woman trying to change her tragic fate."}, {"title": "The Untamed", "quote": "I'd rather be a sinner in your eyes than a liar in mine.", "category": "Historical", "tags": ["Wuxia", " Soulmates", " Cultivation"], "desc": "The legendary C-Drama that changed everything."}, {"title": "Squid Game 2", "quote": "The game never ended; it just changed its face.", "category": "Mystery", "tags": ["Survival", " Dark", " Social"], "desc": "The long-awaited sequel to the global phenomenon."}, {"title": "Moving", "quote": "To protect my child, I can become a monster.", "category": "Sci-Fi", "tags": ["Superpowers", " Family", " Action"], "desc": "Heroes living among us in secret."}, {"title": "Alchemy of Souls", "quote": "Water can be still, but a soul is always moving.", "category": "Fantasy", "tags": ["Magic", " Sword", " Fate"], "desc": "A soul-shifter and a blind woman's destiny."}, {"title": "Twenty-Five Twenty-One", "quote": "Life is about making choices we can live with.", "category": "Life", "tags": ["Youth", " Sports", " Fencing"], "desc": "A nostalgic and heartbreaking look at growing up."}, {"title": "Vincenzo", "quote": "Only a monster can defeat another monster.", "category": "Mystery", "tags": ["Mafia", " Law", " Revenge"], "desc": "An Italian lawyer taking down Korean cartels."}, {"title": "Descendants of the Sun", "quote": "I am a soldier; I protect what is right.", "category": "Romance", "tags": ["Military", " Doctor", " Classic"], "desc": "A legendary love story on the front lines."}, {"title": "Goblin", "quote": "Every moment I spent with you shined.", "category": "Fantasy", "tags": ["Immortal", " Curse", " Destiny"], "desc": "A masterpiece about a lonely immortal."}, {"title": "Strong Woman Do Bong-soon", "quote": "My strength is for protecting the weak.", "category": "Romance", "tags": ["Comedy", " Superpower", " Cute"], "desc": "The strongest girl in the world."}, {"title": "King the Land", "quote": "Smiling is a business; loving you is real.", "category": "Romance", "tags": ["Hotel", " CEO", " Comedy"], "desc": "A classic romance about finding true joy."}, {"title": "It is Okay to Not Be Okay", "quote": "You are enough exactly as you are.", "category": "Life", "tags": ["Mental Health", " Healing", " Dark"], "desc": "A story about healing deep emotional wounds."}, {"title": "Hometown Cha-Cha-Cha", "quote": "Life is not a math problem; it is a dance.", "category": "Life", "tags": ["Village", " Healing", " Love"], "desc": "A dentist finding herself in a seaside town."}, {"title": "Start-Up", "quote": "Follow your dream, even if you fail.", "category": "Tech", "tags": ["Business", " Success", " Sand Box"], "desc": "The struggles of starting a tech company."}, {"title": "All of Us Are Dead", "quote": "Nobody is coming to save us.", "category": "Mystery", "tags": ["Zombie", " High School", " Action"], "desc": "Survival at any cost in a school."}, {"title": "Hospital Playlist", "quote": "Friends are the family we choose.", "category": "Life", "tags": ["Medical", " Friends", " Music"], "desc": "Five doctors sharing life and songs."}, {"title": "Signal", "quote": "If we don't give up, there is hope.", "category": "Mystery", "tags": ["Crime", " Radio", " Time"], "desc": "Connecting past and present through a walkie-talkie."}, {"title": "Kingdom", "quote": "The dead are coming, but the living are more dangerous.", "category": "Historical", "tags": ["Zombie", " Politics", " Joseon"], "desc": "A plague that turns people into monsters."}, {"title": "Itaewon Class", "quote": "My life is just starting, and I will win.", "category": "Life", "tags": ["Revenge", " Business", " Passion"], "desc": "Building an empire from a small pub."}, {"title": "My Mister", "quote": "You are a good person.", "category": "Life", "tags": ["Dark", " Healing", " Connection"], "desc": "A deep bond between two struggling souls."}, {"title": "Flower of Evil", "quote": "I hid the truth because I loved the lie.", "category": "Mystery", "tags": ["Thriller", " Marriage", " Secret"], "desc": "A husband with a dark past and a detective wife."}, {"title": "The King: Eternal Monarch", "quote": "I will find you in every world.", "category": "Sci-Fi", "tags": ["Parallel World", " King", " Fate"], "desc": "A journey across two Koreas."}, {"title": "While You Were Sleeping", "quote": "I saw you in my dreams before I met you.", "category": "Romance", "tags": ["Fantasy", " Legal", " Destiny"], "desc": "Preventing tragedies through dreams."}, {"title": "W: Two Worlds", "quote": "You are the main character of my world.", "category": "Sci-Fi", "tags": ["Webtoon", " Reality", " Love"], "desc": "Falling in love with a comic book hero."}, {"title": "Weightlifting Fairy Kim Bok-joo", "quote": "Swag!", "category": "Romance", "tags": ["Sports", " Youth", " Sweet"], "desc": "The cutest first love story ever."}, {"title": "Mr. Sunshine", "quote": "Guns, glory, and sad endings.", "category": "Historical", "tags": ["Patriotism", " Tragedy", " Epic"], "desc": "A story of heroes in a changing Korea."}, {"title": "Stranger", "quote": "Empathy is a luxury I cannot afford.", "category": "Mystery", "tags": ["Prosecutor", " Crime", " No Emotion"], "desc": "A legal thriller about corruption."}, {"title": "Pinocchio", "quote": "A lie told often enough becomes the truth.", "category": "Life", "tags": ["Journalism", " Truth", " Family"], "desc": "Reporters seeking justice in a world of lies."}, {"title": "Healer", "quote": "My code name is Healer; I leave no trace.", "category": "Mystery", "tags": ["Action", " Romance", " Hidden"], "desc": "A night courier with elite combat skills."}, {"title": "Beyond Evil", "quote": "Who is the real monster?", "category": "Mystery", "tags": ["Thriller", " Crime", " Small Town"], "desc": "Two detectives chasing a serial killer."}, {"title": "Navillera", "quote": "It is never too late to fly.", "category": "Life", "tags": ["Ballet", " Old Age", " Dreams"], "desc": "A grandfather pursuing his lifelong dream."}, {"title": "Our Blues", "quote": "To all of us still alive, let's be happy.", "category": "Life", "tags": ["Anthology", " Jeju", " Healing"], "desc": "The stories of people living on Jeju Island."}, {"title": "Little Women", "quote": "Poverty is a stain that never washes off.", "category": "Mystery", "tags": ["Sisters", " Money", " Thriller"], "desc": "Three sisters against a powerful family."}, {"title": "Extraordinary Attorney Woo", "quote": "My world is different, but not less.", "category": "Life", "tags": ["Law", " Autism", " Whale"], "desc": "A genius lawyer on the spectrum."}, {"title": "Under the Queen Umbrella", "quote": "A mother's shield is her greatest weapon.", "category": "Historical", "tags": ["Palace", " Motherhood", " Education"], "desc": "Protecting her sons in a dangerous court."}, {"title": "Reborn Rich", "quote": "I know the future, and I will buy it.", "category": "Mystery", "tags": ["Business", " Time Travel", " Revenge"], "desc": "Living the life of the family that killed him."}, {"title": "The Worst of Evil", "quote": "To catch a devil, you must go to hell.", "category": "Mystery", "tags": ["Undercover", " Action", " 90s"], "desc": "Police vs. Cartels in the streets of Seoul."}, {"title": "Death Game", "quote": "Death is only the beginning of my lesson.", "category": "Fantasy", "tags": ["Reincarnation", " Dark", " Lesson"], "desc": "Living through 12 different lives as punishment."}, {"title": "Marry My Husband", "quote": "This time, I will live for myself.", "category": "Romance", "tags": ["Revenge", " Time Travel", " Fate"], "desc": "A woman getting a second chance at life."}, {"title": "A Shop for Killers", "quote": "Listen carefully, Jian.", "category": "Mystery", "tags": ["Action", " Uncle", " Sniper"], "desc": "A girl inheriting her uncle's dangerous shop."}, {"title": "Parasyte: The Grey", "quote": "We are not alone in this body.", "category": "Sci-Fi", "tags": ["Horror", " Alien", " Survival"], "desc": "Parasites taking over human hosts."}, {"title": "Lovely Runner", "quote": "I will save you in every timeline.", "category": "Romance", "tags": ["Time Travel", " Idol", " Fate"], "desc": "A fan going back in time to save her star."}, {"title": "Chief Detective 1958", "quote": "Justice had a different face back then.", "category": "Mystery", "tags": ["Retro", " Crime", " Legend"], "desc": "The prequel to a legendary Korean series."}, {"title": "The 8 Show", "quote": "Time is money, literally.", "category": "Mystery", "tags": ["Dark", " Game", " Social"], "desc": "People trapped in a building for money."}, {"title": "Cigarette Girl", "quote": "The scent of the past never leaves.", "category": "Historical", "tags": ["Indonesia", " Netflix", " Drama"], "desc": "A journey through the history of clove cigarettes."}, {"title": "Wonderland", "quote": "Digital immortality is a beautiful lie.", "category": "Sci-Fi", "tags": ["AI", " Loss", " Future"], "desc": "Connecting with the dead through AI."}, {"title": "Gyeongseong Creature", "quote": "In the dark, we became monsters to survive.", "category": "Historical", "tags": ["Horror", " 1945", " Action"], "desc": "Survival in Japanese-occupied Korea."}, {"title": "Sweet Home 3", "quote": "The evolution of humanity is complete.", "category": "Sci-Fi", "tags": ["Monster", " Survival", " Netflix"], "desc": "The final battle for the human soul."}, {"title": "Hellbound 2", "quote": "Welcome to the new world order.", "category": "Fantasy", "tags": ["Cult", " Horror", " Judgment"], "desc": "Decrees of hell becoming a terrifying reality."}, {"title": "All the Love You Wish For", "quote": "A genie who needs a wish himself.", "category": "Fantasy", "tags": ["Rom-Com", " Magic", " Kim Woo-bin"], "desc": "A genie and a cold woman."}, {"title": "The Trunk", "quote": "A secret marriage hidden in a box.", "category": "Mystery", "tags": ["Marriage", " Secret", " Gong Yoo"], "desc": "A strange marriage service company."}, {"title": "When Life Gives You Tangerines", "quote": "We were young and the world was ours.", "category": "Life", "tags": ["1950s", " Jeju", " IU"], "desc": "A story of passion and rebellion in the past."}, {"title": "Trigger", "quote": "The truth is the only headline that matters.", "category": "Mystery", "tags": ["Journalism", " Thriller", " Kim Hye-soo"], "desc": "Investigative reporters chasing a cold case."}, {"title": "Light Shop", "quote": "Those who are lost always find the light.", "category": "Fantasy", "tags": ["Mystery", " Healing", " Spirits"], "desc": "A shop that connects the living and the dead."}, {"title": "Project Wolf Hunting", "quote": "Blood is the only language we speak.", "category": "Mystery", "tags": ["Action", " Gore", " Ship"], "desc": "Criminals on a ship turning into a nightmare."}, {"title": "Connect", "quote": "I can see through your eye.", "category": "Sci-Fi", "tags": ["Horror", " Organ Hunter", " Jung Hae-in"], "desc": "A new human race connected to a killer."}, {"title": "Song of the Bandits", "quote": "In a lawless land, we protect our own.", "category": "Historical", "tags": ["Action", " Gando", " Western"], "desc": "Koreans protecting their home in China."}, {"title": "Celebrity", "quote": "In this world, followers are the only currency.", "category": "Mystery", "tags": ["Influencer", " Scandal", " Dark"], "desc": "The dark side of social media fame."}, {"title": "Mask Girl", "quote": "My face is a secret, but my life is a stage.", "category": "Mystery", "tags": ["Dark", " Revenge", " Identity"], "desc": "A woman with three lives and three faces."}, {"title": "Bloodhounds", "quote": "We fight for those who can't fight back.", "category": "Mystery", "tags": ["Boxing", " Loan Sharks", " Action"], "desc": "Two young boxers against a powerful CEO."}, {"title": "Daily Dose of Sunshine", "quote": "Every morning is a new chance to heal.", "category": "Life", "tags": ["Nursing", " Mental Health", " Hope"], "desc": "A nurse in a psychiatric ward."}, {"title": "The Bequeathed", "quote": "Inheritance is a family curse.", "category": "Mystery", "tags": ["Thriller", " Burial Ground", " Occult"], "desc": "Secrets revealed after a death in the family."}, {"title": "A Killer Paradox", "quote": "I only kill people who deserve it.", "category": "Mystery", "tags": ["Dark", " Justice", " Fate"], "desc": "A normal man who becomes a serial killer hunter."}, {"title": "Hierarchy", "quote": "Rules are made by the top 0.01 percent.", "category": "Mystery", "tags": ["High School", " Revenge", " Elite"], "desc": "Elite students vs. an outsider."}, {"title": "One Ordinary Day", "quote": "I didn't do it, but the world says I did.", "category": "Mystery", "tags": ["Crime", " Law", " Prison"], "desc": "A student caught in a murder case."}, {"title": "Big Mouth", "quote": "I am not the genius criminal you think I am.", "category": "Mystery", "tags": ["Law", " Prison", " Conspiracy"], "desc": "A lawyer framed as a master swindler."}, {"title": "Mouse", "quote": "What if we could identify psychopaths at birth?", "category": "Mystery", "tags": ["Thriller", " Serial Killer", " Sci-Fi"], "desc": "A hunt for the ultimate predator."}, {"title": "Weak Hero Class 1", "quote": "Being small doesn't mean being weak.", "category": "Life", "tags": ["Action", " School", " Bullying"], "desc": "Using brains and tools to fight back."}, {"title": "Taxi Driver 2", "quote": "Don't die, call us. We will get revenge.", "category": "Mystery", "tags": ["Action", " Justice", " Rainbow"], "desc": "The team returns for bigger missions."}, {"title": "Weak Hero Class 2", "quote": "The fight for justice continues.", "category": "Life", "tags": ["Action", " School", " 2026"], "desc": "The sequel to the cult hit."}, {"title": "Alchemy of Souls 2", "quote": "I recognized you the moment I saw you.", "category": "Fantasy", "tags": ["Magic", " Romance", " Destiny"], "desc": "The return of the soul-shifter."}, {"title": "Tale of the Nine Tailed 1938", "quote": "Back to the past to fix the future.", "category": "Fantasy", "tags": ["Action", " Gumiho", " Retro"], "desc": "A mountain god in a lawless era."}, {"title": "The Good Bad Mother", "quote": "I will be a bad mother so you can be a good man.", "category": "Life", "tags": ["Family", " Healing", " Farm"], "desc": "A prosecutor who becomes a child again."}, {"title": "Doctor Slump", "quote": "Even at the bottom, we can find a way up.", "category": "Life", "tags": ["Medical", " Burnout", " Romance"], "desc": "Two doctors finding hope in failure."}, {"title": "The Fiery Priest 2", "quote": "Holy justice is coming back.", "category": "Mystery", "tags": ["Action", " Comedy", " Church"], "desc": "The return of the hot-tempered priest."}];
+        
+        function filterCat(cat) {
+            // Update Buttons
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            render(cat);
+        }
+
+        function render(filter = 'All') {
+            const feed = document.getElementById('main-feed');
+            feed.innerHTML = '';
+            
+            const filtered = filter === 'All' ? dramas : dramas.filter(d => d.category === filter);
+
+            filtered.forEach(d => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div>
+                        <span class="card-tag">${d.category}</span>
+                        <h2>${d.title}</h2>
+                        <p class="quote">"${d.quote}"</p>
+                    </div>
+                    <p>${d.desc}</p>
+                `;
+                feed.appendChild(card);
+            });
+        }
+
+        window.onload = () => render();
+    </script>
+</body>
+</html>
