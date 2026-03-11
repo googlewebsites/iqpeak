@@ -1,0 +1,6 @@
+# Welcome to iQPeak.xyz Robots File
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://iqpeak.xyz/sitemap.xml
