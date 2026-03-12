@@ -531,5 +531,22 @@
 </footer>
     </div>
 
+<div id="visit-counter" style="font-family: sans-serif; color: #333; font-weight: bold;">
+    👁️ Visitas: <span id="count">...</span>
+</div>
+
+<script>
+    function cb(response) {
+        document.getElementById('count').innerText = response.value;
+    }
+</script>
+<script async src="https://api.countapi.xyz/hit/iqpeak_xyz/visits?callback=cb"></script>
+
+    <div align="left">
+    <a href="https://iqpeak.xyz">
+        <img src="https://hits.se/iqpeak.xyz.svg?style=flat-square&color=007bff" alt="Contador de Visitas">
+    </a>
+</div>
+    
 </body>
 </html>
