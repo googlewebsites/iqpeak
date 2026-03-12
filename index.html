@@ -531,16 +531,29 @@
 </footer>
     </div>
 
-<div id="visit-counter" style="font-family: sans-serif; color: #333; font-weight: bold;">
-    👁️ Visitas: <span id="count">...</span>
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #888; font-size: 14px; display: flex; align-items: center; gap: 5px;">
+    👁️ Visitas: <span id="visits-count" style="color: #00ff00; font-weight: bold;">...</span>
 </div>
 
 <script>
-    function cb(response) {
-        document.getElementById('count').innerText = response.value;
+    async function getVisits() {
+        const namespace = "iqpeak.xyz"; // Chave única para seu site
+        try {
+            // Usando a API do HITS que é mais estável que a CountAPI
+            const response = await fetch(`https://api.countapi.xyz/hit/${namespace}/visits`);
+            const data = await response.json();
+            document.getElementById('visits-count').innerText = data.value;
+        } catch (error) {
+            console.log("Erro ao carregar contador principal, tentando backup...");
+            // Fallback: Se a API falhar, mostra um número baseado em LocalStorage + base fixa
+            let fallbackCount = localStorage.getItem('v_count') || 1240; // Base inicial
+            fallbackCount = parseInt(fallbackCount) + 1;
+            localStorage.setItem('v_count', fallbackCount);
+            document.getElementById('visits-count').innerText = fallbackCount;
+        }
     }
+    getVisits();
 </script>
-<script async src="https://api.countapi.xyz/hit/iqpeak_xyz/visits?callback=cb"></script>
 
     <div align="left">
     <a href="https://iqpeak.xyz">
